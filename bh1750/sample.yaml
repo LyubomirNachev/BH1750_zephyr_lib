@@ -1,0 +1,9 @@
+sample:
+  name: BH1750 Digital Light Sensor
+tests:
+  sample.sensor.bh1750:
+    tags: sensors
+    depends_on: i2c
+    platform_allow: nrf52840dongle_nrf52840
+    integration_platforms:
+      - nrf52840dongle_nrf52840
