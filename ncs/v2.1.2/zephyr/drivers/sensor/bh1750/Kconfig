@@ -1,0 +1,33 @@
+menuconfig BH1750
+	bool "BH1750 light sensor"
+	default y
+	select I2C
+	help
+	  Enable driver for the BH1750 light sensor.
+
+if BH1750
+
+choice
+	prompt "Operating mode"
+	default BH1750_MODE_CHM
+	help
+	   Choose the operation mode for the bh1750 light sensor
+
+config BH1750_MODE_CHM
+	bool "0b00010000"
+config BH1750_MODE_CHM_2
+	bool "0b00010001"
+config BH1750_MODE_CLM
+	bool "0b00010011"
+config BH1750_MODE_OTH
+	bool "0b00100000"
+config BH1750_MODE_OTH_2
+	bool "0b00100001"
+config BH1750_MODE_OTL
+	bool "0b00100011"
+
+endchoice 
+
+endif
+
+
